@@ -34,3 +34,12 @@
   color: var(--gold-soft);
   font-weight: bold;
 }
+
+.favorite-btn {
+   right: 25px;
+}
+
+.favorite-btn span {
+  font-size: 30px;
+  cursor: pointer;
+}
