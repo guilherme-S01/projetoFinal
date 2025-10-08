@@ -1,0 +1,17 @@
+<section class="contact">
+  <h1>Contato</h1>
+  <form (ngSubmit)="send()">
+    <label>Nome</label>
+    <input [(ngModel)]="name" name="name" required />
+
+    <label>Email</label>
+    <input type="email" [(ngModel)]="email" name="email" required />
+
+    <label>Mensagem</label>
+    <textarea [(ngModel)]="message" name="message" rows="5" required></textarea>
+
+    <button type="button" (click)="send()">Enviar</button>
+  </form>
+
+  <p *ngIf="sent">Mensagem enviada — obrigado!</p>
+</section>

@@ -1,0 +1,10 @@
+.dashboard{padding:1rem}
+.dash-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.dash-header button{background:#c0b283;border:none;color:#fff;padding:.5rem 1rem}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:1rem}
+.card{background:#fff;border:1px solid #e6e6e6;padding:1rem;border-radius:8px}
+.card h3{margin:0 0 .5rem;font-size:1rem;color:#333}
+.card .value{font-size:1.4rem;font-weight:700;color:#111}
+.card--metric{box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+

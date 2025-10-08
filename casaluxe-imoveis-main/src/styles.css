@@ -1,0 +1,14 @@
+:root {
+    --ivory-elegant: #FDFCF8;
+    --charcoal-gray: #333333;
+    --gold-soft: #C0B283;
+    --cool-gray: #D8D8D8;
+    --white-pure: #FFFFFF;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--ivory-elegant);
+    color: var(--charcoal-gray);
+    margin: 0;
+}

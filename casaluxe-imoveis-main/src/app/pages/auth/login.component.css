@@ -1,0 +1,6 @@
+.auth-card{max-width:420px;margin:2rem auto;padding:1.2rem;border:1px solid #e6e6e6;border-radius:8px}
+.auth-card h2{margin:0 0 1rem}
+.auth-card label{display:block;margin-top:.5rem}
+.auth-card input{width:100%;padding:.5rem;margin-top:.25rem}
+.auth-card button{margin-top:1rem;padding:.6rem 1rem;background:#c0b283;border:none;color:#fff}
+.error{color:#c00;margin-top:.5rem}

@@ -1,0 +1,20 @@
+<div class="auth-card">
+  <h2>Criar Conta</h2>
+  <form (ngSubmit)="submit()">
+    <label>Nome</label>
+    <input type="text" [(ngModel)]="name" name="name" required />
+
+    <label>Email</label>
+    <input type="email" [(ngModel)]="email" name="email" required />
+
+    <label>Senha</label>
+    <input type="password" [(ngModel)]="password" name="password" required />
+
+    <label class="terms">
+      <input type="checkbox" [(ngModel)]="acceptedTerms" name="acceptedTerms" /> Eu li e aceito os <a routerLink="/termos">Termos de Uso</a> e a Política de Privacidade (LGPD)
+    </label>
+
+    <button type="button" (click)="submit()">Criar</button>
+    <p class="error" *ngIf="error">{{ error }}</p>
+  </form>
+</div>

@@ -1,0 +1,4 @@
+.contact{max-width:720px;margin:2rem auto;padding:1rem}
+.contact label{display:block;margin-top:.6rem}
+.contact input,.contact textarea{width:100%;padding:.5rem;margin-top:.25rem}
+.contact button{margin-top:1rem;padding:.6rem 1rem;background:#c0b283;border:none;color:#fff}

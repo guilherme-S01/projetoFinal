@@ -1,0 +1,25 @@
+<section class="dashboard">
+  <header class="dash-header">
+    <h2>Dashboard</h2>
+    <button (click)="logout()">Sair</button>
+  </header>
+
+  <div class="dashboard-welcome">
+    <div class="cards">
+      <div class="card card--metric">
+        <h3>Total de Imóveis</h3>
+        <p class="value">{{ totalProperties }}</p>
+      </div>
+
+      <div class="card card--metric">
+        <h3>Mensagens</h3>
+        <p class="value">{{ totalMessages }}</p>
+      </div>
+
+      <div class="card card--metric">
+        <h3>Usuário</h3>
+        <p class="value">{{ currentUserName }}</p>
+      </div>
+    </div>
+  </div>
+</section>

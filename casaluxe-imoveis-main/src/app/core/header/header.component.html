@@ -1,0 +1,18 @@
+<header class="header">
+  <nav class="nav-container">
+    <div class="logo">
+      <a routerLink="/">casaLux Imobiliária</a>
+    </div>
+    <ul class="nav-links">
+      <li><a routerLink="/imoveis">Imóveis</a></li>
+      <li><a routerLink="/sobre">Sobre Nós</a></li>
+      <li><a routerLink="/contato">Contato</a></li>
+    </ul>
+    <ul class="nav-auth">
+      <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Entrar</a></li>
+      <li *ngIf="!auth.isLoggedIn()"><a routerLink="/signup">Cadastrar</a></li>
+      <li *ngIf="auth.isLoggedIn()"><a routerLink="/dashboard">Dashboard</a></li>
+      <li *ngIf="auth.isLoggedIn()"><a (click)="logout()">Sair</a></li>
+    </ul>
+  </nav>
+</header>

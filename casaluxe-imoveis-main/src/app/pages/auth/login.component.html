@@ -1,0 +1,13 @@
+<div class="auth-card">
+  <h2>Entrar</h2>
+  <form (ngSubmit)="submit()">
+    <label>Email</label>
+    <input type="email" [(ngModel)]="email" name="email" required />
+
+    <label>Senha</label>
+    <input type="password" [(ngModel)]="password" name="password" required />
+
+    <button type="button" (click)="submit()">Entrar</button>
+    <p class="error" *ngIf="error">{{ error }}</p>
+  </form>
+</div>
