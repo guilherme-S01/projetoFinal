@@ -26,4 +26,8 @@ export class PropertyCardComponent {
       img.src = this.FALLBACK_SVG;
     }
   }
+  isFavorite() {
+    this.property.isFavorite = !this.property.isFavorite;
+  }
+
 }
