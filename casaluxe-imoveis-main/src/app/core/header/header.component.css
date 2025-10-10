@@ -11,10 +11,50 @@
 }
 
 .logo a {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.6rem;
+    font-weight: 800;
     color: var(--charcoal-gray);
     text-decoration: none;
+    background: linear-gradient(135deg, var(--charcoal-gray) 0%, var(--blue) 50%, var(--gold-soft) 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.4s ease;
+    position: relative;
+    letter-spacing: -0.5px;
+}
+
+.logo a::before {
+    content: '🏛️';
+    margin-right: 0.5rem;
+    font-size: 1.4rem;
+    -webkit-text-fill-color: initial;
+    background: none;
+    filter: brightness(1.2);
+}
+
+.logo a:hover {
+    background-position: 100% 0%;
+    transform: scale(1.05);
+    text-shadow: 0 2px 8px rgba(192, 178, 131, 0.3);
+}
+
+/* Efeito de brilho no logo */
+.logo a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.8s ease;
+    z-index: 1;
+}
+
+.logo a:hover::after {
+    left: 100%;
 }
 
 .nav-links {
@@ -22,19 +62,411 @@
     display: flex;
     margin: 0;
     padding: 0;
+    gap: 0.5rem;
 }
 
 .nav-links li {
-    margin-left: 2rem;
+    margin: 0;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--charcoal-gray);
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    border: 2px solid transparent;
+}
+
+.nav-links a .nav-icon {
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+/* Efeito hover moderno com gradiente */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--gold-soft) 0%, #a89660 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
 }
 
 .nav-links a:hover {
-    color: var(--gold-soft);
+    color: var(--white-pure);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(192, 178, 131, 0.3);
+}
+
+.nav-links a:hover::before {
+    opacity: 1;
+}
+
+.nav-links a:hover .nav-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Estados de foco para acessibilidade */
+.nav-links a:focus {
+    outline: 3px solid rgba(192, 178, 131, 0.5);
+    outline-offset: 2px;
+}
+
+/* Link ativo (página atual) */
+.nav-links a.active {
+    color: var(--white-pure);
+    background: linear-gradient(135deg, var(--blue) 0%, #2d3559 100%);
+    box-shadow: 0 2px 10px rgba(59, 66, 119, 0.3);
+    border-color: var(--blue);
+}
+
+.nav-links a.active::before {
+    opacity: 0;
+}
+
+.nav-links a.active .nav-icon {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Efeito de pulso no link ativo */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 2px 10px rgba(59, 66, 119, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(59, 66, 119, 0.5);
+    }
+    100% {
+        box-shadow: 0 2px 10px rgba(59, 66, 119, 0.3);
+    }
+}
+
+.nav-links a.active {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Animações de entrada para os nav-links */
+.nav-links li {
+    animation: slideInDown 0.6s ease backwards;
+}
+
+.nav-links li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.nav-links li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.nav-links li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efeito de ondulação ao clicar */
+.nav-links a {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+}
+
+.nav-links a:active::after {
+    width: 200px;
+    height: 200px;
+}
+
+/* Melhoria do header geral */
+.header {
+    background: linear-gradient(135deg, var(--white-pure) 0%, #f8f9fa 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(192, 178, 131, 0.2);
+}
+
+/* Animação do container de navegação */
+.nav-container {
+    animation: fadeInScale 0.8s ease backwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.nav-auth {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-auth li {
+    margin: 0;
+}
+
+.nav-auth a {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.nav-auth a .icon {
+    font-size: 1rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.nav-auth a:hover .icon {
+    transform: scale(1.1);
+}
+
+/* Efeito de brilho nos botões */
+.nav-auth a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.nav-auth a:hover::after {
+    left: 100%;
+}
+
+/* Estados de foco para acessibilidade */
+.nav-auth a:focus {
+    outline: 3px solid rgba(59, 66, 119, 0.5);
+    outline-offset: 2px;
+}
+
+/* Animação de entrada para os botões */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-auth li {
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+.nav-auth li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.nav-auth li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Botão Entrar */
+.nav-auth li:nth-child(1) a {
+    color: var(--blue);
+    border-color: var(--blue);
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-auth li:nth-child(1) a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--blue);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.nav-auth li:nth-child(1) a:hover::before {
+    left: 0;
+}
+
+.nav-auth li:nth-child(1) a:hover {
+    color: var(--white-pure);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 66, 119, 0.3);
+}
+
+/* Botão Cadastrar */
+.nav-auth li:nth-child(2) a {
+    color: var(--white-pure);
+    background: linear-gradient(135deg, var(--gold-soft) 0%, #a89660 100%);
+    border-color: var(--gold-soft);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-auth li:nth-child(2) a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #a89660 0%, #967d4a 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.nav-auth li:nth-child(2) a:hover::before {
+    opacity: 1;
+}
+
+.nav-auth li:nth-child(2) a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(192, 178, 131, 0.4);
+}
+
+/* Botão Dashboard (quando logado) */
+.nav-auth li:has(a[routerLink="/dashboard"]) a {
+    color: var(--white-pure);
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+.nav-auth li:has(a[routerLink="/dashboard"]) a:hover {
+    background: #2d3559;
+    border-color: #2d3559;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 66, 119, 0.4);
+}
+
+/* Botão Sair */
+.nav-auth li:last-child a:not([routerLink]) {
+    color: #dc3545;
+    border-color: #dc3545;
+    background: transparent;
+}
+
+.nav-auth li:last-child a:not([routerLink]):hover {
+    background: #dc3545;
+    color: var(--white-pure);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        order: 1;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-auth {
+        order: 2;
+        justify-content: center;
+    }
+
+    .nav-auth a {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .nav-links a .nav-icon {
+        font-size: 1rem;
+    }
+
+    .nav-auth {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.8rem;
+    }
+
+    .nav-auth a {
+        width: 100%;
+        text-align: center;
+        max-width: 200px;
+    }
 }

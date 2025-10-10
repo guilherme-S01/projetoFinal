@@ -4,15 +4,50 @@
       <a routerLink="/">casaLux Imobiliária</a>
     </div>
     <ul class="nav-links">
-      <li><a routerLink="/imoveis">Imóveis</a></li>
-      <li><a routerLink="/sobre">Sobre Nós</a></li>
-      <li><a routerLink="/contato">Contato</a></li>
+      <li>
+        <a routerLink="/imoveis" routerLinkActive="active">
+          <span class="nav-icon">🏠</span>
+          Imóveis
+        </a>
+      </li>
+      <li>
+        <a routerLink="/sobre" routerLinkActive="active">
+          <span class="nav-icon">ℹ️</span>
+          Sobre Nós
+        </a>
+      </li>
+      <li>
+        <a routerLink="/contato" routerLinkActive="active">
+          <span class="nav-icon">📞</span>
+          Contato
+        </a>
+      </li>
     </ul>
     <ul class="nav-auth">
-      <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Entrar</a></li>
-      <li *ngIf="!auth.isLoggedIn()"><a routerLink="/signup">Cadastrar</a></li>
-      <li *ngIf="auth.isLoggedIn()"><a routerLink="/dashboard">Dashboard</a></li>
-      <li *ngIf="auth.isLoggedIn()"><a (click)="logout()">Sair</a></li>
+      <li *ngIf="!auth.isLoggedIn()">
+        <a routerLink="/login">
+          <span class="icon">🔑</span>
+          Entrar
+        </a>
+      </li>
+      <li *ngIf="!auth.isLoggedIn()">
+        <a routerLink="/signup">
+          <span class="icon">✨</span>
+          Cadastrar
+        </a>
+      </li>
+      <li *ngIf="auth.isLoggedIn()">
+        <a routerLink="/dashboard">
+          <span class="icon">📊</span>
+          Dashboard
+        </a>
+      </li>
+      <li *ngIf="auth.isLoggedIn()">
+        <a (click)="logout()">
+          <span class="icon">🚪</span>
+          Sair
+        </a>
+      </li>
     </ul>
   </nav>
 </header>

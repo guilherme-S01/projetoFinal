@@ -1,4 +1,8 @@
-<app-carousel [items]="slides"></app-carousel>
+<app-carousel
+  [items]="slides"
+  [autoplay]="true"
+  [autoplayInterval]="4000">
+</app-carousel>
 
 <section class="search-bar">
   <input type="text" placeholder="Pesquisar por título..." [(ngModel)]="query" />

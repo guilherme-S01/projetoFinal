@@ -1,0 +1,33 @@
+/* Layout principal da aplicação - Sticky Footer */
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Header fica no topo */
+app-header {
+    flex-shrink: 0;
+}
+
+/* Main ocupa o espaço disponível */
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Permite que o conteúdo encolha */
+}
+
+/* Footer fica sempre no bottom */
+app-footer {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+/* Garante que router-outlet ocupe o espaço necessário */
+main router-outlet + * {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}

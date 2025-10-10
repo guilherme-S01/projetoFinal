@@ -7,9 +7,30 @@
     --blue: #3B4277;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
 body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--ivory-elegant);
     color: var(--charcoal-gray);
     margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+}
+
+/* Garante que o app-root ocupe toda a altura */
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex: 1;
 }
